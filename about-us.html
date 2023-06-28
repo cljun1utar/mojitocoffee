@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mojito Coffee - Home</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- navigation panel -->
+    <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img src="images/logo.png"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-light" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-itm" active>
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-itm">
+              <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-itm">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-itm">
+              <a class="nav-link" href="#socialmediaconnect">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- cover photo -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="main-cover" src="images/aboutuscover.jpg" />
+          <div class="carousel-caption">
+            <h1 class="display-2">About Us</h1>
+            <h3>The Story Behind Mojito Coffee</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---reservation--------------------------------->
+    <div class="form">
+      <!--login---------->
+      <div class="reservation-form">
+        <!--cancel-btn---------------->
+        <a href="javascript:void(0);" class="form-cancel">
+          <i class="fas fa-times"></i>
+        </a>
+        <strong>Reservation</strong>
+        <!--inputs-->
+        <form id="reservationform" onsubmit="aftersubmit()">
+          <input type="text" name="fullname" placeholder="Full Name" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Example@gmail.com"
+            required
+          />
+          <input
+            class="mdl-textfield_input"
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="(+60)1X-XXXXXXX"
+            pattern="^(\+?6?01)[0-46-9]-*[0-9]{7,8}$"
+            required
+          />
+          <input
+            type="datetime-local"
+            id="reservationdate"
+            name="reservationdate"
+            required
+          />
+          <input type="submit" value="Reserve Now" />
+        </form>
+        <!--forget-and-sign-up-btn-->
+        <div class="form-btns">
+          <a href="#" class="reservation-contactus"
+            >Having issue with booking? Contact Us!</a
+          >
+        </div>
+      </div>
+    </div>
+    <!--- Short Welcome -->
+    <div class="container-fluid">
+      <div class="welcome text-center">
+        <div class="col-12 col-md-center-10">
+          <h1 class="display-4">Our Vision</h1>
+        </div>
+        <hr />
+        <div class="col-12 col-md-center-10">
+          <h3>
+            We believe our real purpose in life can be found in serving others.
+          </h3>
+        </div>
+      </div>
+      <div class="row welcome text-center">
+        <div class="col-12 col-md-center-10">
+          <h1 class="display-4">Our Mission</h1>
+        </div>
+        <hr />
+        <div class="col-12 col-md-center-10">
+          <h3>Serving the origin of the coffee to everyday life.</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row text-center padding">
+        <img
+          id="aboutuscontent"
+          class="img-responsive mx-auto rounded"
+          src="Images/aboutuscontent.jpg"
+        />
+        <div class="aboutuscontent">
+          <h3>
+            Each day starts with a great cup of coffee with family, friends,
+            co-workers.
+          </h3>
+          <p>
+            Our company was founded based on a passion to deliver you fresh
+            roasted premium coffees that taste the way coffee was meant to
+            taste, and we think a great cup of coffee inspires great
+            conversation. In some small way, we hope to impact this world
+            through great tasting coffee shared in community with others.
+          </p>
+          <div class="container-fuild padding ourvalue">
+            <div class="row text-center padding">
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-compress"></i>
+                <h3>PROACTIVE</h3>
+                <p>We always enhance the way we doing to the best.</p>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-heart"></i>
+                <h3>OWNERSHIP</h3>
+                <p>We own every coffee experience of every customer.</p>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <i class="fas fa-globe"></i>
+                <h3>COLLABORATIVE</h3>
+                <p>We are not just a coffee but being a world citizen.</p>
+              </div>
+            </div>
+          </div>
+          <h3>Our commitment to building community.</h3>
+          <p>
+            At Mojito Coffee, community includes all of us ... wherever we live,
+            work, rest, and play. Our similarities outweigh our differences and
+            our belief is that we can build community one cup at a time, whether
+            here in the Northwest, with you our customers, and across the globe
+            in the farm communities that produce our delicious coffee beans.
+            Connect with us in person at one of our local Coffee Tasting Events
+            in the Woodinville Wine District area. Follow us on Facebook for the
+            next tasting event.
+          </p>
+          <h3>Our commitment to great coffee.</h3>
+          <strong>Taste:</strong>
+          <p>
+            We are committed to crafting you excellent roasted whole bean coffee
+            delivered fresh. We roast our coffees in a fluid bed roaster in
+            small batches using traditional sight, smell, sound, & a bit of
+            technology to craft flavor.
+          </p>
+          <strong>Health & Environment:</strong>
+          <p>
+            Our Coffee is roasted in an environmentally friendly manner while
+            burning no fossil fuels. We use only clean, hydroelectricity
+            generated here in the Pacific Northwest leaving a minimal carbon
+            footprint.
+          </p>
+          <strong>Sourcing our Beans:</strong>
+          <p>
+            We are committed to bringing you responsibly sourced, high quality
+            arabica beans. This is based on a commitment to our growers & their
+            communities
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="socialmediaconnect"
+      class="container-fluid padding socialmediaconnect"
+    >
+      <div class="row text-center padding">
+        <div class="col-12">
+          <h2>Connect With Us</h2>
+        </div>
+        <div class="col-12 social padding">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid padding">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <hr class="light-100" />
+            <h5>Our Office</h5>
+            <hr class="light-100" />
+            <p>09-5678899</p>
+            <p>mojitocoffee@gmail.com</p>
+            <p>Jalan Pinang, Kuala Lumpur</p>
+            <p>50450 Wilayah Persekutuan Kuala Lumpur</p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light-100" />
+            <h5>Our hours</h5>
+            <hr class="light-100" />
+            <p>Monday: 9am - 12pm</p>
+            <p>Saturday: 10am - 1am</p>
+            <p>Sunday: 10am - 1am</p>
+            <p>Public Holiday: 10am - 1am</p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light-100" />
+            <h5>Social Media</h5>
+            <hr class="light-100" />
+            <div class="socialfooter">
+              <p>
+                Follow us on social media platforms and stay tuned for the fresh
+                updates.
+              </p>
+              <div class="socialfootericon">
+                <a href="www.facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="www.youtube.com"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <hr class="light-100" />
+            <h5>&copy: www.mojitocoffee.com</h5>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      Notification.requestPermission(function (status) {
+        console.log("Notification permission statis:", status);
+      });
+      $(document).on("click", ".reservation", function () {
+        $(".form").addClass("reservation-form-active");
+      });
+      $(document).on("click", ".form-cancel", function () {
+        $(".form").removeClass("reservation-form-active");
+      });
+      $(".form").submit(function (e) {
+        var r = confirm("Press a button!");
+        if (r == true) {
+          $("#reservationform").submit();
+        } else {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>

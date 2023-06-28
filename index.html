@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mojito Coffee - Home</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- navigation panel -->
+    <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img src="images/logo.png" alt="mainlogo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-light" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-itm">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-itm">
+              <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-itm">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-itm">
+              <a class="nav-link" href="#socialmediaconnect">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- cover photo -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="main-cover" src="images/cover-1.jpg" alt="maincover" />
+          <div class="carousel-caption">
+            <h1 class="display-2">COFFEE O'CLOCK</h1>
+            <h3>Time To Take A Break</h3>
+            <button type="button" class="delivery btn btn-outline-light btn-lg">
+              Delivery
+            </button>
+            <button type="button" class="reservation btn btn-primary btn-lg">
+              Reservation
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <div class="reservation-form">
+        <a href="javascript:void(0);" class="form-cancel">
+          <i class="fas fa-times"></i>
+        </a>
+        <strong>Reservation</strong>
+        <form id="reservationform">
+          <input type="text" name="fullname" placeholder="Full Name" required />
+          <input
+            type="email"
+            name="email-reservation"
+            placeholder="Example@gmail.com"
+            required
+          />
+          <input
+            class="mdl-textfield_input"
+            type="tel"
+            name="phone-reservation"
+            placeholder="(+60)1X-XXXXXXX"
+            pattern="^(\+?6?01)[0-46-9]-*[0-9]{7,8}$"
+            required
+          />
+          <input
+            type="datetime-local"
+            id="reservationdate"
+            name="datetime-reservation"
+            required
+          />
+          <input type="submit" value="Reserve Now" />
+        </form>
+        <div class="form-btns">
+          <a href="#socialmediaconnect" class="reservation-contactus"
+            >Having issue with booking? Contact Us!</a
+          >
+        </div>
+      </div>
+      <div class="delivery-form">
+        <a href="javascript:void(0);" class="form-cancel">
+          <i class="fas fa-times"></i>
+        </a>
+        <strong>Delivery</strong>
+        <form id="delivery-form-fill">
+          <input
+            class="delivery-text"
+            type="text"
+            id="fullname-delivery"
+            name="fullname-delivery"
+            placeholder="Full Name"
+          />
+          <input
+            class="delivery-text"
+            type="tel"
+            id="phone-delivery"
+            name="phone-delivery"
+            placeholder="(+60)1X-XXXXXXX"
+            pattern="^(\+?6?01)[0-46-9]-*[0-9]{7,8}$"
+          />
+          <input
+            class="delivery-text"
+            type="email"
+            id="email-delivery"
+            name="email-delivery"
+            placeholder="Example@gmail.com"
+          />
+          <input
+            class="delivery-text"
+            type="text"
+            id="address-delivery"
+            name="address-delivery"
+            placeholder="Address Line"
+          />
+          <input
+            class="delivery-text"
+            type="button"
+            onclick="proceedToOrder()"
+            value="Proceed to Order"
+          />
+          <table class="itemOrderTable">
+            <tr>
+              <th colspan="2">Coffee Series</th>
+              <th colspan="2">Tea Series</th>
+            </tr>
+            <tr>
+              <td>Americano<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="AmericanoQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="AmericanoQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+              <td>Vanila Tea<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="VanilaTeaQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="VanilaTeaQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Cappucino<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="CappucinoQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="CappucinoQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+              <td>Green Tea<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="GreenTeaQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="GreenTeaQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Macchiato<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="MacchiatoQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="MacchiatoQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+              <th colspan="2">Chocolate Series</th>
+            </tr>
+            <tr>
+              <td>Espresso<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="EspressoQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="EspressoQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+              <td>Hot Choco.<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="HotChocolateQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="HotChocolateQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Latte<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="LatteQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="LatteQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+              <td>White Choco.<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="WhiteChocolateQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="WhiteChocolateQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Mocha<br />(RM5.00)</td>
+              <td>
+                <input
+                  id="MochaQuantity"
+                  class="numberbox"
+                  type="number"
+                  name="MochaQuantity"
+                  value="0"
+                  min="0"
+                  required
+                />
+              </td>
+              <td colspan="2">
+                <input type="submit" value="Complete Order" />
+              </td>
+            </tr>
+          </table>
+        </form>
+        <div class="form-btns">
+          <a
+            href="menu.html#menu-anchor"
+            target="_blank"
+            class="already-account"
+          >
+            Not sure what to order? Have a look in our menu!</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row jumbotron">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+          <p class="lead">
+            Due to current pandemic, we are supporting the cause by donating 10%
+            of revenue from every cup of your coffee to the community! You can
+            directly donate to the cause with us as well!
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+          <button
+            onclick="window.open('https://www.ngohub.asia/','-_blank');"
+            type="button"
+            class="btn btn-outline-secondary btn-lg"
+          >
+            Donate
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row welcome text-center">
+        <div class="col-12 col-md-center-10">
+          <h1 class="display-4">A Coffee For People</h1>
+        </div>
+        <hr />
+        <div class="col-12 col-md-center-10">
+          <p class="lead">
+            We are not just searving the ordinary coffee but to warm the
+            community hearts in everyday life!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="coffee-benefits container-fluid">
+      <div class="row col-md-10-center">
+        <div class="offset-md-1 col-md-5">
+          <h1>Get to know coffee!</h1>
+          <ul>
+            <li><strong>Boost of performance</strong></li>
+            <li class="listnostyle">
+              Create a better working environment always start with a cup of
+              coffee.
+            </li>
+            <li><strong>Improve your lifestyle</strong></li>
+            <li class="listnostyle">
+              Bringing physical and mental health benefits with a boost of
+              memory and reduce on depression
+            </li>
+            <li><strong>Simply happiness</strong></li>
+            <li class="listnostyle">
+              Enjoy variety of coffee with professional barista latte art while
+              doing your favorite passion
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="embed-responsive embed-responsive-16by9 align-items-left col-md-10"
+          >
+            <video controls poster="images/coffeeposter.jpg">
+              <source
+                src="images/An Introduction to Coffee.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid padding">
+      <div class="row welcome text-center">
+        <div class="col-12">
+          <h1 class="display-4">Meet the Founder</h1>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <div class="container-fluid padding">
+      <div class="row padding">
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="Images/founder1.png"
+              alt="founder1"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Mary Jo</h4>
+              <p class="class-text">
+                A coffee addict who put full passion in developing the origin of
+                homemade coffee.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="Images/founder2.jpg"
+              alt="founder2"
+            />
+            <div class="card-body">
+              <h4 class="card-title">John Doe</h4>
+              <p class="class-text">
+                A successful entrepreneur who believe in key of productivity
+                starts with a cup of coffee.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="Images/founder3.jpg"
+              alt="founder3"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Phil Ho</h4>
+              <p class="class-text">
+                Professional artist who making his journey in barista art of his
+                every single masterpiece.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="socialmediaconnect"
+      class="container-fluid padding socialmediaconnect"
+    >
+      <div class="row text-center padding">
+        <div class="col-12">
+          <h2>Connect With Us</h2>
+        </div>
+        <div class="col-12 social padding">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid padding">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <hr class="light-100" />
+            <h5>Our Office</h5>
+            <hr class="light-100" />
+            <p>09-5678899</p>
+            <p>mojitocoffee@gmail.com</p>
+            <p>Jalan Pinang, Kuala Lumpur</p>
+            <p>50450 Wilayah Persekutuan Kuala Lumpur</p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light-100" />
+            <h5>Our hours</h5>
+            <hr class="light-100" />
+            <p>Weekdays: 9am - 12pm</p>
+            <p>Weekends: 10am - 1am</p>
+            <p>Public Holiday: 10am - 1am</p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light-100" />
+            <h5>Social Media</h5>
+            <hr class="light-100" />
+            <div class="socialfooter">
+              <p>
+                Follow us on social media platforms and stay tuned for the fresh
+                updates.
+              </p>
+              <div class="socialfootericon">
+                <a href="www.facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="www.youtube.com"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <hr class="light-100" />
+            <h5>&copy;: www.mojitocoffee.com</h5>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      Notification.requestPermission(function (status) {
+        console.log("Notification permission statis:", status);
+      });
+      $(document).on("click", ".reservation", function () {
+        $(".form").addClass("reservation-form-active");
+      });
+      $(document).on("click", ".form-cancel", function () {
+        $(".form").removeClass("reservation-form-active");
+      });
+      $(document).on("click", ".reservation-contactus", function () {
+        $(".form").removeClass("reservation-form-active");
+      });
+      $("#reservationform").submit(function (e) {
+        var r = confirm("Please make sure all information is correct.");
+        if (r == true) {
+        } else {
+          e.preventDefault();
+        }
+      });
+      $(document).on("click", ".delivery", function () {
+        $(".form").addClass("delivery-active");
+      });
+      $(document).on("click", ".form-cancel", function () {
+        $(".form").removeClass("delivery-active");
+      });
+      $(document).on("click", ".reservation-contactus", function () {
+        $(".form").removeClass("delivery-active");
+      });
+      function proceedToOrder() {
+        var FullName = $("#fullname-delivery").val();
+        var PhoneNumber = $("#phone-delivery").val();
+        var Email = $("#email-delivery").val();
+        var AddressLine = $("#address-delivery").val;
+        if (
+          /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/.test(PhoneNumber) == true &&
+          !(FullName == "") &&
+          !(AddressLine == "") &&
+          /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(
+            Email
+          ) == true
+        ) {
+          $(".delivery-text").addClass("delivery-text-none");
+          $(".itemOrderTable").addClass("itemOrderTable-active");
+        } else {
+          var r = alert("Input Error, please check again.");
+          this.preventDefault();
+        }
+      }
+      $("#delivery-form-fill").submit(function (e) {
+        var Americano = $("#AmericanoQuantity").val();
+        var VanilaTea = $("#VanilaTeaQuantity").val();
+        var Cappucino = $("#CappucinoQuantity").val();
+        var GreenTea = $("#GreenTeaQuantity").val();
+        var Macchiato = $("#MacchiatoQuantity").val();
+        var Espresso = $("#EspressoQuantity").val();
+        var HotChocolate = $("#HotChocolateQuantity").val();
+        var Latte = $("#LatteQuantity").val();
+        var WhiteChocolate = $("#WhiteChocolateQuantity").val();
+        var Mocha = $("#MochaQuantity").val();
+        var r = confirm("Please make sure all information is correct.");
+        if (r == true) {
+          if (
+            !(Americano == 0) ||
+            !(VanilaTea == 0) ||
+            !(Cappucino == 0) ||
+            !(GreenTea == 0) ||
+            !(Macchiato == 0) ||
+            !(Espresso == 0) ||
+            !(HotChocolate == 0) ||
+            !(Latte == 0) ||
+            !(WhiteChocolate == 0) ||
+            !(Mocha == 0)
+          ) {
+          } else {
+            alert("Input Error, please check again.");
+            e.preventDefault();
+          }
+        } else {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
